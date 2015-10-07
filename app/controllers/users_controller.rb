@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # these routes should only be seen by logged in users
   def show
     @user = User.find(params[:id])
 
