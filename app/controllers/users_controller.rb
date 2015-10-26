@@ -58,7 +58,7 @@ class UsersController < ApplicationController
       render :"games/index"
     else
       OwnedGame.create!(owner_id: @user.id, game_id: @game.id)
-      redirect_to games_path
+      redirect_to :back
     end
   end
 
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
       render :"games/index"
     else
       DesiredGame.create!(wanter_id: @user.id, wanted_game_id: @game.id)
-      redirect_to games_path
+      redirect_to :back
     end
   end
 

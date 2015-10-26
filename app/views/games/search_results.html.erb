@@ -1,0 +1,7 @@
+<h1 class=" games-index partial-header">Matching Games</h1>
+<br style="clear:both" />
+<%= render @games %>
+
+<% if @games.empty? %>
+	<p>No matching games found.</p>
+<% end %>

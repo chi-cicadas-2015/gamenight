@@ -96,6 +96,20 @@ class GamesController < ApplicationController
     redirect_to game_path(@game)
   end
 
+  def search
+    @games = Game.search(params[:search])
+    render :search_results
+  end
+
+  def advanced_search_form
+    @mechanics = Mechanic.all
+  end
+
+  def advanced_search
+    @games = Game.advanced_search(params[:players], params[:game_time], params[:mechanics])
+    render :search_results
+  end
+
   private
   def set_game
     @game = Game.find(params[:id])

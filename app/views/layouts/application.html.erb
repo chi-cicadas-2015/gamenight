@@ -25,7 +25,7 @@
      </a>
 
      <div id="menu">
-       <img id="logo" src="/images/moon cloud.png">
+       <a href="/"><img id="logo" src="/images/moon cloud.png"></a>
         <div class="pure-menu">
 
             <ul class="pure-menu-list">
@@ -42,9 +42,16 @@
                   <%= link_to "your wishlist", user_path(current_user || 0, :query => "wanted games"), {:class => "pure-menu-link"} %>
                 </li>
             </ul>
-            <a class="pure-menu-heading" href="#"><img class=" pure-image-responsive">Games</a>
+            <div class="pure-menu-heading"><img class="pure-image-responsive">Games</div>
             <ul class="pure-menu-list">
               <li class="menu-item-custom pure-menu-item"><a href="/games" class="pure-menu-link">all the games</a></li>
+              <li class="menu-item-custom pure-menu-item">
+                <%= form_tag(search_path, :method => "get", :class => "search-form") do %>
+                  <%= text_field_tag :search, params[:search], class: "search-bar", placeholder: "Search by name..." %>
+                  <button class="search-button" type="submit">Search</button>
+                <% end %>
+              </li>
+              <li class="menu-item-custom pure-menu-item"><%= link_to "Advanced Search...", games_advanced_search_path, class: "pure-menu-link" %></li>
             </ul>
         </div>
     </div>

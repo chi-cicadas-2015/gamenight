@@ -28,7 +28,7 @@
   <% @mechanics.each do |mechanic| %>
     <% possible_mechanics << [mechanic.trait, mechanic.trait] %>
   <% end %>
-  <%= f.label :mechanics %>
+  <label for="game_mechanics">Mechanics (hold Ctrl or Cmd to select more than one)</label>
   <%= f.select :mechanics, possible_mechanics, {:prompt => ""}, { :multiple => true, :size => 7 } %></p><p>
   <%= f.submit %></p>
 

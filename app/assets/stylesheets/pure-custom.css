@@ -12,7 +12,8 @@
 #logo {
   /*opacity: .7;*/
   background-color: white;
-  margin: 1em 2em 1em 2em;
+  /*margin: 1em 2em 1em 2em;*/
+  margin: 1em .5em;
   padding: .5em;
   border-radius: 35%;
 }

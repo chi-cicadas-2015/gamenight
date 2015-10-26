@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'search' => 'games#search'
+  get 'advanced-search' => 'games#advanced_search'
+
+  get 'games/advanced-search' => 'games#advanced_search_form'
   get 'games/most-popular' => 'games#most_popular', as: :most_popular_games
   get 'games/most-owned'   => 'games#most_owned',   as: :most_owned_games
   get 'games/most-wanted'  => 'games#most_wanted',  as: :most_wanted_games
